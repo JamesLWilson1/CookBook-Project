@@ -1,33 +1,29 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Homepage = () => {
   return (
     <div className="homepage">
-      <header>
-        <h1>Welcome to Food Blog!</h1>
+      <header className="header">
+        <div className="header-content">
+          <h1 className="title">precipitee</h1>
+          <div className="buttons">
+            <button className="button">Filter by Tag</button>
+            <button className="button">Report</button>
+            <button className="button">Search</button>
+          </div>
+        </div>
+        <input type="text" placeholder="Search" className="search-bar" />
       </header>
-      <main>
-        <section className="features">
-          <h2>Features</h2>
-          <ul>
-            <li>Signup and login to access exclusive content.</li>
-            <li>View recipes and their details.</li>
-            <li>Bookmark your favorite recipes.</li>
-            {/* Add more features here */}
-          </ul>
-        </section>
-        <section className="about">
-          <h2>About Us</h2>
-          <p>
-            Food Blog is your ultimate destination for discovering new recipes,
-            cooking tips, and more. Whether you're a seasoned chef or a
-            beginner in the kitchen, we've got something for everyone.
-          </p>
-        </section>
-      </main>
-      <footer>
-        <p>&copy; 2024 Food Blog. All rights reserved.</p>
-      </footer>
+      <div className="main-content">
+  {recipes.map((recipe, index) => (
+    <div key={index} className="recipe-card">
+      <h3>{recipe.title}</h3>
+      <p>{recipe.description}</p>
+      <Link to="/RecipeListPage">View All Recipes</Link> {/* Link to RecipeListPage */}
+    </div>
+  ))}
+</div>
     </div>
   );
 };
