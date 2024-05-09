@@ -36,7 +36,7 @@ const Homepage = () => {
           </div>
         </div>
         <div className="homepage">
-        <RecipeListPage />
+        {/*<RecipeListPage />*/}
       <Link to="/RecipeListPage">View All Recipes</Link> {/* Link to RecipeListPage */}
       </div>
         <input type="text" placeholder="Search" className="search-bar" />
