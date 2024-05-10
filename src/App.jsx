@@ -1,19 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
-import Homepage from './Homepage.jsx';
 import Signup from './Signup.jsx';
 import Login from './Login.jsx';
-import RecipeListPage from './RecipeListPage.jsx';
+import Recipes from './RecipeListPage.jsx';
+import recipes from './RecipeData';
 
+import './App.css';
 
 const App = () => {
     return (
         <Router>
             <Routes>
-                <Route path="/" exact component={Homepage} />
-                <Route path="/signup" component={Signup} />
-                <Route path="/login" component={Login} />
-                <Route exact path="/recipes" component={RecipeListPage} />
+                <Route path="/" element={<Recipes recipes={recipes} />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/login" element={<Login />} />
+                
             </Routes>
         </Router>
     );

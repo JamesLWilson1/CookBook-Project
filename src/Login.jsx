@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Header from './Header';
+import './Login.css'; // Import the CSS file
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -16,27 +18,30 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="login-container">
+      <Header />
       <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="login-form">
         <input
           type="email"
-          placeholder="Email"
           name="email"
+          placeholder="Email"
           value={formData.email}
           onChange={handleChange}
+          className="login-input"
         />
         <input
           type="password"
-          placeholder="Password"
           name="password"
+          placeholder="Password"
           value={formData.password}
           onChange={handleChange}
+          className="login-input"
         />
-        <button type="submit">Login</button>
+        <button type="submit" className="login-button">Login</button>
       </form>
     </div>
   );
-};
+}
 
 export default Login;
